@@ -76,6 +76,10 @@ public class SudokuController implements ActionListener, Serializable {
 		model.resume();
 		view.setVisible(true);
 	}
+	
+	public void hideView(){
+		view.destroy();
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -86,7 +90,21 @@ public class SudokuController implements ActionListener, Serializable {
 			//Reguardless of the type of view (GUI or CLI) everything uses events
 			//Update cell always has a source of SudokuTextBox
 			SudokuTextBox src = (SudokuTextBox) e.getSource();
-			int val = Integer.parseInt(src.getText());
+			
+			int val;
+			try{
+				val = Integer.parseInt(src.getText());
+			} catch(Exception ex){
+				val = 0;
+			}
+			
+			if(val < 1 || val > 9){
+				//Invalid sudoku value (not between 1 and 9)
+				System.out.println("Trying to set view grid value");
+				view.setGridValue(src.getIndex(), 0, true);
+				break;
+			}
+			
 			model.setCellValue(src.getIndex(), val);
 			model.getGameCompletion();
 			break;

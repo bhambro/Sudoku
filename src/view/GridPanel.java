@@ -8,6 +8,8 @@ import javax.swing.*;
 
 public class GridPanel extends JPanel {
 	
+	private static final long serialVersionUID = 8708668360184364276L;
+
 	public void paint(Graphics g){
 		//g.drawRect(32, 26, 90, 87);
 		

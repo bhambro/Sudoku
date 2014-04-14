@@ -18,6 +18,10 @@ public class SudokuGameModel extends BoardGameModel implements Serializable {
 		board = new SudokuBoard();
 	}
 	
+	public SudokuGameModel(){
+		
+	}
+	
 	
 	public void createBoard(int level){
 		this.level = level;

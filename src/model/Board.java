@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public abstract class Board {
 	
 	//Cells not used in abstract class
+	@SuppressWarnings("unused")
 	private ArrayList<BoardCell> cells;
 	
 	public Board(){

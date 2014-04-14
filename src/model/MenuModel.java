@@ -8,6 +8,7 @@ import controller.MenuController;
 public class MenuModel {
 	
 	//Controller retained for possible future requirements
+	@SuppressWarnings("unused")
 	private MenuController controller;
 	
 	public MenuModel(MenuController controller){

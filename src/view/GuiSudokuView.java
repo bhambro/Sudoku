@@ -104,21 +104,28 @@ public class GuiSudokuView extends JFrame implements SudokuView, DocumentListene
 	@Override
 	public void setGridValue(int index, int value, boolean editable) {
 		System.out.println("Setting index: " + index + " to: " + value);
-		SudokuTextBox thisField = cells.get(index);
+		final SudokuTextBox thisField = cells.get(index);
 		if(! editable){
 			thisField.setText(value + "");
 			thisField.setEditable(false);
 			thisField.setBackground(Color.lightGray);
 		} else {
 			if(value == 0){
-				thisField.setText("");
+				//Reset the text field to empty string on validation fail
+				//Use runnable object in invoke later as will be called within 
+				//the event from the field we are trying to modify
+				Runnable textReset = new Runnable(){
+					public void run(){
+						thisField.setText("");
+					}
+				};
+				SwingUtilities.invokeLater(textReset);
 			} else {
 				thisField.setText(value + "");
 			}
 			thisField.setEditable(true);
 			thisField.setBackground(Color.white);
-		}
-		
+		}		
 	}
 
 	@Override

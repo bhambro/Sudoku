@@ -52,6 +52,11 @@ private static ApplicationDelegate self;
 			pauseController = null;
 		}
 		
+		if(sudokuController != null){
+			sudokuController.hideView();
+			sudokuController = null;
+		}
+		
 		//Create and inject relevant view depending on type
 		//Add custom views here
 		if(viewType == ViewType.GUI_VIEWTYPE){

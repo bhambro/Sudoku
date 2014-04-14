@@ -16,6 +16,10 @@ public abstract class BoardGameModel implements JobCompletion {
 		jobScheduler = new JobScheduler();
 	}
 	
+	public BoardGameModel(){
+		
+	}
+	
 	public void createBoard(int level){
 		//Add a new job to scheduler to create board puzzle
 		//This is dependant on the implementation of board game
