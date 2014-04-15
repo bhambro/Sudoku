@@ -1,7 +1,12 @@
-package view;
 
-//Abstract view interface ensuring all view types can be treated as a general type
-//All view implementations must implement this interface
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Abstract view interface ensuring all view types can be treated as a general
+ * 			type, all implementations must implement this interface
+ */
+
+package view;
 
 public abstract interface View {
 	public void draw();

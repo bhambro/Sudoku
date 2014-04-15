@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Abstract BoardCell contained within a board instance
+ */
+
 package model;
 
 import java.io.Serializable;

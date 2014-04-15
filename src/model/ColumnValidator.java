@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Column validator of type sudoku validator used to validate all columns in sudoku grid
+ */
+
 package model;
 
 import java.util.ArrayList;

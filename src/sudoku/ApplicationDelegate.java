@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Application delegate - main controller or navigator for transitioning
+ * 			between views
+ */
+
 package sudoku;
 
 import java.util.Calendar;

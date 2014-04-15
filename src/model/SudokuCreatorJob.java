@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Specific implementation of generic job class to handle the task of generating
+ * 			the sudoku board on a seperate thread
+ */
+
 package model;
 
 public class SudokuCreatorJob extends SudokuJob {

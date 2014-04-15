@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Region selector used by sudoku board to select region for a cell
+ * 			implemented in a chain of responsibility design pattern
+ */
+
 package model;
 
 public class RegionSelector {

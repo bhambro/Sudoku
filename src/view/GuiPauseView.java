@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Pause view implementation for GUI view
+ */
+
 package view;
 
 import javax.swing.JButton;
@@ -5,8 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import controller.PauseController;
-
-//Pause view implementation for default GUI view
 
 public class GuiPauseView extends JFrame implements PauseView {
 	

@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Row validator a type of sudoku validator used by sudoku model to validate a
+ * 			possible value in all rows
+ */
+
 package model;
 
 import java.util.ArrayList;

@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Class to handle all serialization tasks for saving and loading games
+ * 			implemented in a singleton design pattern
+ */
+
 package model;
 
 import java.io.FileInputStream;
@@ -10,7 +18,7 @@ public class Serializer {
 	private static Serializer self;
 	
 	private Serializer(){
-		
+		//Un-accessable constructor forcing use of getInstance method
 	}
 	
 	public static Serializer getInstance(){

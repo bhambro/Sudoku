@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Controller for sudoku view types interacting with the sudoku game model
+ */
+
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -12,13 +19,14 @@ import view.SudokuView;
 import model.SudokuCell;
 import model.SudokuGameModel;
 
-public class SudokuController implements ActionListener, Serializable {
+public class SudokuController extends Controller implements ActionListener, Serializable {
 	
 	private static final long serialVersionUID = 4636304156861532347L;
 	private SudokuGameModel model;
 	private SudokuView view;
 	
 	public SudokuController(SudokuView view, int level, String playerName){
+		super(view);
 		//New game
 		this.view = view;
 		this.view.setDelegate(this);
@@ -28,6 +36,7 @@ public class SudokuController implements ActionListener, Serializable {
 	}
 	
 	public SudokuController(SudokuView view, SudokuGameModel savedModel, String playerName){
+		super(view);
 		//Start game from existing saved game model
 		this.view = view;
 		this.view.setDelegate(this);
@@ -42,6 +51,11 @@ public class SudokuController implements ActionListener, Serializable {
 		//Allow cell-update events
 		model.getBoard().setBuilt(true);
 		model.resume();
+	}
+	
+	public SudokuController(){
+		//Empty constructor for de-serialization process
+		super(null);
 	}
 	
 	public void loadViewWithData(){
@@ -76,17 +90,12 @@ public class SudokuController implements ActionListener, Serializable {
 		model.resume();
 		view.setVisible(true);
 	}
-	
-	public void hideView(){
-		view.destroy();
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("Action Performed with command: " + e.getActionCommand());
+		//Process events from the view
 		switch(e.getActionCommand()){
 		case "cellUpdated":
-			System.out.println("updateCell event");
 			//Reguardless of the type of view (GUI or CLI) everything uses events
 			//Update cell always has a source of SudokuTextBox
 			SudokuTextBox src = (SudokuTextBox) e.getSource();
@@ -100,7 +109,6 @@ public class SudokuController implements ActionListener, Serializable {
 			
 			if(val < 1 || val > 9){
 				//Invalid sudoku value (not between 1 and 9)
-				System.out.println("Trying to set view grid value");
 				view.setGridValue(src.getIndex(), 0, true);
 				break;
 			}

@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Job scheduler owned by a board model for scheduling jobs on a single thread
+ */
+
 package model;
 
 import java.util.concurrent.ExecutorService;
@@ -5,7 +12,6 @@ import java.util.concurrent.Executors;
 
 public class JobScheduler {
 	
-	//private static final long serialVersionUID = -5170209528353902945L;
 	private ExecutorService executor;
 	
 	public JobScheduler(){

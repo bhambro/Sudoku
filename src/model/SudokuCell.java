@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: An implementation of the generic board cell contained within the sudoku
+ * 			board
+ */
+
 package model;
 
 import java.io.Serializable;

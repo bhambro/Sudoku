@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Region validator a type of sudoku validator used by the sudoku board to validate
+ * 			a possible value in regions
+ */
+
 package model;
 
 import java.util.ArrayList;

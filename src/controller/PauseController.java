@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Controller for pause view types handling action events
+ */
+
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -6,11 +13,12 @@ import java.awt.event.ActionListener;
 import sudoku.ApplicationDelegate;
 import view.PauseView;
 
-public class PauseController implements ActionListener {
+public class PauseController extends Controller implements ActionListener {
 	
 	private PauseView view;
 	
 	public PauseController(PauseView view){
+		super(view);
 		this.view = view;
 		this.view.setDelegate(this);
 		this.view.draw();
@@ -18,6 +26,7 @@ public class PauseController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//Process event from view
 		switch(e.getActionCommand()){
 		case "resume":
 			ApplicationDelegate.getInstance().resumeGame();
@@ -35,9 +44,4 @@ public class PauseController implements ActionListener {
 			break;
 		}
 	}
-	
-	public void hideView(){
-		view.destroy();
-	}
-
 }

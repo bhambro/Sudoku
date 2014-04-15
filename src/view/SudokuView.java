@@ -1,8 +1,13 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: All implementations of sudoku (game) view must implement this interface
+ */
+
 package view;
 
 import controller.SudokuController;
-
-//Specific implementations of a sudoku view (game view) must implement this interface
 
 public abstract interface SudokuView extends View {
 	public void setTimerText(String time);

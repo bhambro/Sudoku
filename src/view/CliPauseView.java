@@ -1,8 +1,14 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Pause menu implementation for command line interface
+ * 			view (not yet implemented)
+ */
+
 package view;
 
 import controller.PauseController;
-
-//Pause view implementation for CLI view (not implemented)
 
 public class CliPauseView implements PauseView {
 
