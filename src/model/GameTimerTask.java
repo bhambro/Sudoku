@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Timer task to track the duration of a game session
+ */
+
 package model;
 
 import java.io.Serializable;
@@ -5,9 +12,8 @@ import java.util.TimerTask;
 
 public class GameTimerTask extends TimerTask implements Serializable {
 	
-	//Timer task to track the time of game session while being serializable
-	
 	private static final long serialVersionUID = 4337908188199392701L;
+	//Delegate to recieve a 'tick' event every second from this class
 	private SudokuGameModel delegate;
 	private int seconds;
 	
@@ -28,6 +34,7 @@ public class GameTimerTask extends TimerTask implements Serializable {
 	public String composeTimeString(int s){
 		int secs = s;
 		int mins = 0;
+		
 		if(s > 59){
 			mins = s / 60;
 			secs = s % 60;
@@ -35,8 +42,6 @@ public class GameTimerTask extends TimerTask implements Serializable {
 		
 		String secsS = secs + "";
 		String minsS = mins + "";
-		
-		
 		
 		if(secs < 10){
 			secsS = "0" + secs;
@@ -46,9 +51,7 @@ public class GameTimerTask extends TimerTask implements Serializable {
 			minsS = "0" + mins;
 		}
 		
-		String returnable = minsS + ":" + secsS;
-		
-		return returnable;
+		return minsS + ":" + secsS;
 	}
 	
 	public int getSeconds(){

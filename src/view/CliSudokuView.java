@@ -1,8 +1,14 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Sudoku (main game view) implementation for command line interface
+ * 			view (not yet implemented)
+ */
+
 package view;
 
 import controller.SudokuController;
-
-//Sudoku (game) view implementation for CLI view (Not Implemented)
 
 public class CliSudokuView implements SudokuView {
 

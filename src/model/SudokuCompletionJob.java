@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Specific implementation of generic job class to handle the actions
+ * 			required to check if a game is complete or not on a seperate thread
+ */
+
 package model;
 
 public class SudokuCompletionJob extends SudokuJob {

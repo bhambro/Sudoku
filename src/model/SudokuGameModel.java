@@ -1,3 +1,11 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Specific implementation of generic board game model to contain and manage 
+ * 			the sudoku board 
+ */
+
 package model;
 
 import java.io.Serializable;

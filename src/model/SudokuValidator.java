@@ -1,8 +1,15 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Abstract validator serving as a general type for all specific validators
+ */
+
 package model;
 
 import java.util.ArrayList;
 
-public class SudokuValidator {
+public abstract class SudokuValidator {
 	protected SudokuValidator next;
 	protected ArrayList<SudokuCell> cells;
 	protected ArrayList<SudokuCell> toValidate;

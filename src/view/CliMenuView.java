@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Implementation of MenuView serving as a command line interface
+ */
+
 package view;
 
 import java.awt.event.ActionEvent;
@@ -6,8 +13,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import controller.MenuController;
-
-//Menu view implementation for CLI view
 
 public class CliMenuView implements MenuView {
 	

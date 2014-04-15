@@ -1,8 +1,13 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: All MenuView implementations (CLI and GUI) must implement this interface
+ */
+
 package view;
 
 import controller.MenuController;
-
-//Specific implementations of a menu view must implement this interface
 
 public interface MenuView extends View {
 	public void setDelegate(MenuController c);

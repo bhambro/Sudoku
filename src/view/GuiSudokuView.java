@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Sudoku (game) view implementation for GUI view
+ */
+
 package view;
 
 import java.awt.Color;
@@ -9,8 +16,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 import controller.SudokuController;
-
-//Sudoku (game) view implementation for default GUI view
 
 public class GuiSudokuView extends JFrame implements SudokuView, DocumentListener {
 

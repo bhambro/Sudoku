@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Starting point for execution with check for view type 
+ */
+
 package sudoku;
 
 public class Start {

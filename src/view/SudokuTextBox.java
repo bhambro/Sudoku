@@ -1,8 +1,13 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Custom text field element to store a cell index
+ */
+
 package view;
 
 import javax.swing.JTextField;
-
-//Custom text field element to store cell ID's
 
 public class SudokuTextBox extends JTextField {
 	

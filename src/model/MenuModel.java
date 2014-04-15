@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Menu model to handle fetching saved games for the menu view
+ */
+
 package model;
 
 import java.io.File;

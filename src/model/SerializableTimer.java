@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Timer class that implements serializable
+ */
+
 package model;
 
 import java.io.Serializable;

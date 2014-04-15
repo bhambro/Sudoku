@@ -1,17 +1,22 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 15/4/14
+ * Purpose: Custom JPanel to draw the grid structure on the GUI
+ * 			sudoku view
+ */
+
 package view;
 
 import java.awt.Graphics;
 
 import javax.swing.*;
 
-//Custom jPanel to draw the grid structure on the GUI Sudoku View
-
 public class GridPanel extends JPanel {
 	
 	private static final long serialVersionUID = 8708668360184364276L;
 
 	public void paint(Graphics g){
-		//g.drawRect(32, 26, 90, 87);
 		
 		int height = 87;
 		int width = 92;

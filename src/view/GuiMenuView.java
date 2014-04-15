@@ -1,3 +1,10 @@
+
+/*
+ * Author: Ben Hambrook
+ * Date: 1/4/14
+ * Purpose: Implementation of MenuView for GUI based view
+ */
+
 package view;
 
 import java.awt.Dimension;
@@ -5,8 +12,6 @@ import java.awt.Dimension;
 import javax.swing.*;
 
 import controller.MenuController;
-
-//Menu view implementation for default GUI view
 
 public class GuiMenuView extends JFrame implements MenuView {
 
@@ -35,6 +40,7 @@ public class GuiMenuView extends JFrame implements MenuView {
 	public void draw() {
 		setLayout(null);
 		
+		//Load section
 		loadPanel = new JPanel();
 		loadPanel.setLayout(null);
 		loadPanel.setBorder(BorderFactory.createTitledBorder("Load Game"));
@@ -67,6 +73,7 @@ public class GuiMenuView extends JFrame implements MenuView {
 		
 		add(loadPanel);
 		
+		//New game section
 		gamePanel = new JPanel();
 		gamePanel.setLayout(null);
 		gamePanel.setBorder(BorderFactory.createTitledBorder("New Game"));
