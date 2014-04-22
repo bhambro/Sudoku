@@ -19,6 +19,25 @@ public class RowValidator extends SudokuValidator {
 		this.row = row;
 	}
 	
+	public boolean validate(SudokuCell cell){
+		//Validate for completion
+		for(int c = 0; c < cells.size(); c++){
+			if(cells.get(c).getRow() == cell.getRow() && cells.get(c) != cell){
+				toValidate.add(cells.get(c));
+			}
+		}
+		
+		if(validateValues(cell.getValue())){
+			if(next != null){
+				return next.validate(cell);
+			} else {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	public boolean validate(int value){
 		for(int c = 0; c < cells.size(); c++){
 			if(cells.get(c).getRow() == row){
@@ -27,6 +46,7 @@ public class RowValidator extends SudokuValidator {
 		}
 		
 		if(validateValues(value)){
+			System.out.println("Row validator valid");
 			//Continue to next
 			if(next != null){
 				return next.validate(value);
@@ -34,6 +54,7 @@ public class RowValidator extends SudokuValidator {
 				return true;
 			}
 		}
+		System.out.println("Row validator failed");
 		return false;
 	}
 

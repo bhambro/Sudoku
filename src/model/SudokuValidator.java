@@ -29,6 +29,8 @@ public abstract class SudokuValidator {
 		return true;
 	}
 	
+	public abstract boolean validate(SudokuCell cell);
+	
 	public boolean validate(int value){
 		if(next == null){
 			return true;

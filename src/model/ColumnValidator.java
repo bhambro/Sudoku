@@ -17,7 +17,27 @@ public class ColumnValidator extends SudokuValidator {
 		this.col = col;
 	}
 	
+	public boolean validate(SudokuCell cell){
+		//Validate for completion
+		for(int c = 0; c < cells.size(); c++){
+			if(cells.get(c).getColumn() == cell.getColumn() && cells.get(c) != cell){
+				toValidate.add(cells.get(c));
+			}
+		}
+		
+		if(validateValues(cell.getValue())){
+			if(next != null){
+				return next.validate(cell);
+			} else {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	public boolean validate(int value){
+		//Validate for build
 		for(int c = 0; c < cells.size(); c++){
 			if(cells.get(c).getColumn() == col){
 				toValidate.add(cells.get(c));
@@ -25,12 +45,14 @@ public class ColumnValidator extends SudokuValidator {
 		}
 		
 		if(validateValues(value)){
+			System.out.println("Column validator valid");
 			if(next != null){
 				return next.validate(value);
 			} else {
 				return true;
 			}
 		}
+		System.out.println("Column validator failed");
 		return false;
 	}
 }

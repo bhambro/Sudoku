@@ -97,9 +97,18 @@ public class SudokuBoard extends Board implements Serializable {
 	public boolean isComplete(){
 		for(int c = 0; c < cells.size(); c++){
 			SudokuCell thisCell = cells.get(c);
-			if(thisCell.getHiddenValue() != thisCell.getValue()){
+			if(thisCell.getValue() == 0){
 				return false;
 			}
+			
+			RegionValidator regionValidator = new RegionValidator(null, cells, thisCell.getRegion());
+			ColumnValidator columnValidator = new ColumnValidator(regionValidator, cells, thisCell.getColumn());
+			RowValidator rValidator = new RowValidator(columnValidator, cells, thisCell.getRow());
+			
+			if(!rValidator.validate(thisCell)){
+				return false;
+			}
+			
 		}
 		return true;
 	}

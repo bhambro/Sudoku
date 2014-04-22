@@ -19,6 +19,25 @@ public class RegionValidator extends SudokuValidator {
 		this.region = region;
 	}
 	
+	public boolean validate(SudokuCell cell){
+		//Validate for completion
+		for(int c = 0; c < cells.size(); c++){
+			if(cells.get(c).getRegion() == cell.getRegion() && cells.get(c) != cell){
+				toValidate.add(cells.get(c));
+			}
+		}
+		
+		if(validateValues(cell.getValue())){
+			if(next != null){
+				return next.validate(cell);
+			} else {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	public boolean validate(int value){
 		for(int c = 0; c < cells.size(); c++){
 			if(cells.get(c).getRegion() == region){
@@ -27,6 +46,7 @@ public class RegionValidator extends SudokuValidator {
 		}
 		
 		if(validateValues(value)){
+			System.out.println("Region validator valid");
 			//Continue to next validator
 			if(next != null){
 				return next.validate(value);
@@ -34,6 +54,7 @@ public class RegionValidator extends SudokuValidator {
 				return true;
 			}
 		}
+		System.out.println("Region validator not valid");
 		return false;
 	}
 
